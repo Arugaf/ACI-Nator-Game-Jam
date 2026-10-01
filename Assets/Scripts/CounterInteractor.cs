@@ -38,6 +38,8 @@ public class CounterInteractor : MonoBehaviour {
 
         if (!_interactor.CanInteract(counter.transform)) return;
 
+        if (!_pickableItemInteractor.currentlyCarryingItem || !_auraInteractor.currentlyWithAura) return;
+
         counter.AcceptItem(_pickableItemInteractor.TakeCurrentItem(), _auraInteractor.TakeCurrentAura());
     }
 }

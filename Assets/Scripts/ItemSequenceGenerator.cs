@@ -41,7 +41,7 @@ public class ItemSequenceGenerator : MonoBehaviour {
         Debug.Log("New Round: ");
         for (var i = 0; i < idsAntiques.Count; i++) {
             Antiques.Add(new AntiqueWithAura(antiques[idsAntiques[i]].itemName, auras[idsAuras[i]].auraName));
-            Debug.Log("Item: " + antiques[idsAntiques[i]].itemName + " aura:" + auras[idsAuras[i]].auraName);
+            Debug.Log("Item: " + antiques[idsAntiques[i]].itemName + " aura: " + auras[idsAuras[i]].auraName);
         }
     }
 }

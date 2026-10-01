@@ -5,6 +5,8 @@ public class HighlightableItem : MonoBehaviour {
     [SerializeField] private Color highlightColor = Color.white;
 
     private SpriteRenderer _spriteRenderer;
+    
+    private bool _highlighted;
 
     private void Awake() {
         if (_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -12,6 +14,11 @@ public class HighlightableItem : MonoBehaviour {
     }
 
     public void SetHighlighted(bool highlighted) {
+        _highlighted = highlighted;
         _spriteRenderer.color = highlighted ? highlightColor : originalColor;
+    }
+    
+    public bool IsHighlighted() {
+        return _highlighted;
     }
 }

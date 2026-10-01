@@ -961,6 +961,7 @@ GameObject:
   - component: {fileID: 767810492}
   - component: {fileID: 767810489}
   - component: {fileID: 767810488}
+  - component: {fileID: 767810493}
   m_Layer: 0
   m_Name: Counter
   m_TagString: Untagged
@@ -1116,6 +1117,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &767810493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767810487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39997011b1cf76b4c9035e106412437d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NonCarryingItemPredicate
+  interactor: {fileID: 1059300490}
 --- !u!1 &1002104743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,6 +1824,7 @@ GameObject:
   - component: {fileID: 1295033376}
   - component: {fileID: 1295033375}
   - component: {fileID: 1295033378}
+  - component: {fileID: 1295033380}
   - component: {fileID: 1295033379}
   m_Layer: 0
   m_Name: Circle
@@ -1956,6 +1971,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1295033380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295033374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39997011b1cf76b4c9035e106412437d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NonCarryingItemPredicate
+  interactor: {fileID: 1059300490}
 --- !u!1 &1481062977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1968,6 +1996,7 @@ GameObject:
   - component: {fileID: 1481062979}
   - component: {fileID: 1481062978}
   - component: {fileID: 1481062981}
+  - component: {fileID: 1481062983}
   - component: {fileID: 1481062982}
   m_Layer: 0
   m_Name: Circle (1)
@@ -2114,6 +2143,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1481062983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481062977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39997011b1cf76b4c9035e106412437d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NonCarryingItemPredicate
+  interactor: {fileID: 1059300490}
 --- !u!1 &1573018551
 GameObject:
   m_ObjectHideFlags: 0

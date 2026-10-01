@@ -23,7 +23,7 @@ public class ItemSequenceObserver : MonoBehaviour {
         Antiques.Add(new AntiqueWithAura(item.itemName, aura.auraName));
         Debug.Log("Item: " + item.itemName + " added");
         item.gameObject.SetActive(false);
-        aura.gameObject.SetActive(true);
+        aura.gameObject.SetActive(false);
 
         CheckForNewRound();
     }

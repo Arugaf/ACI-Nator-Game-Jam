@@ -23,8 +23,6 @@ public class HighlightableItemInteractor : MonoBehaviour {
         Vector2 mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var collider = Physics2D.OverlapPoint(mouseWorldPosition);
         var newHoveredItem = collider != null ? collider.GetComponent<HighlightableItem>() : null;
-        if (newHoveredItem == _hoveredItem)
-            return;
 
         if (_hoveredItem != null) _hoveredItem.SetHighlighted(false);
 
