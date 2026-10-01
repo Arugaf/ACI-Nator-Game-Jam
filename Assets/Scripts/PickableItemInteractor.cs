@@ -1,17 +1,21 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Interactor))]
 public class PickableItemInteractor : MonoBehaviour {
-    [SerializeField] private float pickupDistance = 1.5f;
     [SerializeField] private Transform holdPoint;
     [SerializeField] private InputActionReference interactAction;
 
+    private Interactor _interactor;
+
     private Camera _mainCamera;
+
     private PickableItem _hoveredItem;
 
-    private bool _currentlyCarryingItem = false;
+    public bool CurrentlyCarryingItem { get; private set; }
 
     private void Awake() {
+        if (_interactor == null) _interactor = GetComponent<Interactor>();
         if (_mainCamera == null) _mainCamera = Camera.main;
     }
 
@@ -26,42 +30,29 @@ public class PickableItemInteractor : MonoBehaviour {
     }
 
     private void Update() {
-        UpdateHoveredItem();
+        SearchPickableItem();
     }
 
-    private void UpdateHoveredItem() {
-        if (_currentlyCarryingItem) return;
+    private void SearchPickableItem() {
+        if (CurrentlyCarryingItem) return;
 
         Vector2 mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var collider = Physics2D.OverlapPoint(mouseWorldPosition);
         var newHoveredItem = collider != null ? collider.GetComponent<PickableItem>() : null;
-        if (newHoveredItem == _hoveredItem)
+
+        if (newHoveredItem != null && newHoveredItem == _hoveredItem)
             return;
 
-        if (_hoveredItem != null) _hoveredItem.SetHighlighted(false);
-
         _hoveredItem = newHoveredItem;
-        if (newHoveredItem == null) return;
-
-        var canPickup = CanPickup(newHoveredItem);
-        newHoveredItem.SetHighlighted(canPickup);
     }
 
     private void OnInteract(InputAction.CallbackContext context) {
         if (_hoveredItem == null) return;
 
-        if (!CanPickup(_hoveredItem)) return;
+        if (!_interactor.CanInteract(_hoveredItem.transform)) return;
 
         _hoveredItem.Pickup(holdPoint);
-        _currentlyCarryingItem = true;
-        _hoveredItem.SetHighlighted(false);
+        CurrentlyCarryingItem = true;
         _hoveredItem = null;
-    }
-
-    private bool CanPickup(PickableItem item) {
-        return Vector2.Distance(
-            transform.position,
-            item.transform.position
-        ) <= pickupDistance;
     }
 }
