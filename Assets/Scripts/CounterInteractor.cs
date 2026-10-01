@@ -1,29 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Interactor))]
-public class PickableItemInteractor : MonoBehaviour {
-    public bool currentlyCarryingItem;
-
-    [SerializeField] private Transform holdPoint;
+[RequireComponent(typeof(PickableItemInteractor))]
+public class CounterInteractor : MonoBehaviour {
     [SerializeField] private InputActionReference interactAction;
 
     private Interactor _interactor;
+    private PickableItemInteractor _pickableItemInteractor;
 
     private Camera _mainCamera;
 
-    private PickableItem _currentItem;
-
-    public PickableItem TakeCurrentItem() {
-        var item = _currentItem;
-        _currentItem = null;
-        currentlyCarryingItem = false;
-        return item;
-    }
-
     private void Awake() {
         if (_interactor == null) _interactor = GetComponent<Interactor>();
+        if (_pickableItemInteractor == null) _pickableItemInteractor = GetComponent<PickableItemInteractor>();
         if (_mainCamera == null) _mainCamera = Camera.main;
     }
 
@@ -40,13 +30,12 @@ public class PickableItemInteractor : MonoBehaviour {
     private void OnInteract(InputAction.CallbackContext context) {
         Vector2 mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var collider = Physics2D.OverlapPoint(mouseWorldPosition);
-        var hoveredItem = collider != null ? collider.GetComponent<PickableItem>() : null;
+        var counter = collider != null ? collider.GetComponent<Counter>() : null;
 
-        if (hoveredItem == null) return;
+        if (counter == null) return;
 
-        if (!_interactor.CanInteract(hoveredItem.transform)) return;
+        if (!_interactor.CanInteract(counter.transform)) return;
 
-        _currentItem = hoveredItem.Pickup(holdPoint);
-        currentlyCarryingItem = true;
+        counter.AcceptItem(_pickableItemInteractor.TakeCurrentItem());
     }
 }
