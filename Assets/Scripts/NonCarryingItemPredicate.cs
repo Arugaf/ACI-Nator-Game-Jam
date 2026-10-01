@@ -2,10 +2,10 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class CarryingItemPredicate : Predicate {
+public class NonCarryingItemPredicate : Predicate {
     [SerializeField] private PickableItemInteractor interactor;
 
     public override bool Evaluate(GameObject target) {
-        return !interactor.currentlyCarryingItem;
+        return interactor.currentlyCarryingItem;
     }
 }

@@ -1,8 +1,7 @@
 using UnityEngine;
 
 public class HighlightableItem : MonoBehaviour {
-    public Color originalColor = Color.white;
-
+    [SerializeField] private Color originalColor = Color.white;
     [SerializeField] private Color highlightColor = Color.white;
 
     private SpriteRenderer _spriteRenderer;

@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Interactor))]
 public class HighlightableItemInteractor : MonoBehaviour {
-    [SerializeReference] private Predicate[] conditions;
-
     private Interactor _interactor;
 
     private Camera _mainCamera;
@@ -35,7 +33,8 @@ public class HighlightableItemInteractor : MonoBehaviour {
 
         if (!_interactor.CanInteract(_hoveredItem.transform)) return;
 
-        if (conditions.Any(condition => !condition.Evaluate(newHoveredItem.gameObject))) {
+        var predicates = newHoveredItem.GetComponents<Predicate>();
+        if (predicates.Any(condition => !condition.Evaluate(newHoveredItem.gameObject))) {
             return;
         }
 

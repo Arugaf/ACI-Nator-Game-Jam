@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Interactor))]
 public class PickableItemInteractor : MonoBehaviour {
+    public bool currentlyCarryingItem;
+
     [SerializeField] private Transform holdPoint;
     [SerializeField] private InputActionReference interactAction;
 
@@ -10,9 +13,13 @@ public class PickableItemInteractor : MonoBehaviour {
 
     private Camera _mainCamera;
 
-    private PickableItem _hoveredItem;
+    private PickableItem _currentItem;
 
-    public bool CurrentlyCarryingItem { get; private set; }
+    public PickableItem TakeCurrentItem() {
+        var item = _currentItem;
+        _currentItem = null;
+        return item;
+    }
 
     private void Awake() {
         if (_interactor == null) _interactor = GetComponent<Interactor>();
@@ -29,30 +36,16 @@ public class PickableItemInteractor : MonoBehaviour {
         interactAction.action.Disable();
     }
 
-    private void Update() {
-        SearchPickableItem();
-    }
-
-    private void SearchPickableItem() {
-        if (CurrentlyCarryingItem) return;
-
+    private void OnInteract(InputAction.CallbackContext context) {
         Vector2 mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var collider = Physics2D.OverlapPoint(mouseWorldPosition);
-        var newHoveredItem = collider != null ? collider.GetComponent<PickableItem>() : null;
+        var hoveredItem = collider != null ? collider.GetComponent<PickableItem>() : null;
 
-        if (newHoveredItem != null && newHoveredItem == _hoveredItem)
-            return;
+        if (hoveredItem == null) return;
 
-        _hoveredItem = newHoveredItem;
-    }
+        if (!_interactor.CanInteract(hoveredItem.transform)) return;
 
-    private void OnInteract(InputAction.CallbackContext context) {
-        if (_hoveredItem == null) return;
-
-        if (!_interactor.CanInteract(_hoveredItem.transform)) return;
-
-        _hoveredItem.Pickup(holdPoint);
-        CurrentlyCarryingItem = true;
-        _hoveredItem = null;
+        _currentItem = hoveredItem.Pickup(holdPoint);
+        currentlyCarryingItem = true;
     }
 }
