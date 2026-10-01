@@ -10,6 +10,7 @@ public class CharacterController2D : MonoBehaviour {
 
     private Rigidbody2D _rigidBody;
     private Vector2 _moveInput;
+    private bool _inverted;
 
     private void Awake() {
         _rigidBody = GetComponent<Rigidbody2D>();
@@ -25,6 +26,7 @@ public class CharacterController2D : MonoBehaviour {
 
     private void Update() {
         _moveInput = moveAction.action.ReadValue<Vector2>();
+        _moveInput *= _inverted ? -1f : 1f;
         _moveInput = Vector2.ClampMagnitude(_moveInput, 1f);
     }
 
@@ -33,5 +35,13 @@ public class CharacterController2D : MonoBehaviour {
         var currentAcceleration = _moveInput.sqrMagnitude > 0.01f ? acceleration : deceleration;
         _rigidBody.linearVelocity =
             Vector2.MoveTowards(_rigidBody.linearVelocity, targetVelocity, currentAcceleration * Time.fixedDeltaTime);
+    }
+
+    public void MultiplySpeed(float multiplier) {
+        moveSpeed *= multiplier;
+    }
+
+    public void InvertController() {
+        _inverted = !_inverted;
     }
 }

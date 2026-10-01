@@ -22,6 +22,10 @@ public class PickableItemInteractor : MonoBehaviour {
         return item;
     }
 
+    public PickableItem PeekItem() {
+        return _currentItem;
+    }
+
     private void Awake() {
         if (_interactor == null) _interactor = GetComponent<Interactor>();
         if (_mainCamera == null) _mainCamera = Camera.main;
@@ -46,7 +50,7 @@ public class PickableItemInteractor : MonoBehaviour {
 
         if (!_interactor.CanInteract(hoveredItem.transform)) return;
 
-        _currentItem = hoveredItem.Pickup(holdPoint);
+        _currentItem = hoveredItem.Pickup(transform, holdPoint);
         currentlyCarryingItem = true;
     }
 }
