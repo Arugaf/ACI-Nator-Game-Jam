@@ -1,27 +1,29 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class ItemSequenceObserver : MonoBehaviour {
     [SerializeField] private ItemSequenceGenerator generator;
 
-    public HashSet<string> Antiques { get; } = new();
+    public HashSet<AntiqueWithAura> Antiques { get; } = new();
 
     public void Start() {
         generator.GenerateSequence();
     }
 
-    public void InsertItem(PickableItem item) {
-        if (!item.CompareTag("Antique") || Antiques.Contains(item.itemName) ||
-            !generator.Antiques.Contains(item.itemName)) {
+    public void InsertItem(PickableItem item, Aura aura) {
+        if (!item.CompareTag("Antique") || Antiques.Contains(new AntiqueWithAura(item.itemName, aura.auraName)) ||
+            !generator.Antiques.Contains(new AntiqueWithAura(item.itemName, aura.auraName)) ||
+            !aura.CompareTag("Aura")) {
             Debug.Log("Inappropriate item");
             Destroy(item.gameObject);
+            Destroy(aura.gameObject);
             return;
         }
 
-        Antiques.Add(item.itemName);
+        Antiques.Add(new AntiqueWithAura(item.itemName, aura.auraName));
         Debug.Log("Item: " + item.itemName + " added");
         item.gameObject.SetActive(false);
+        aura.gameObject.SetActive(true);
 
         CheckForNewRound();
     }

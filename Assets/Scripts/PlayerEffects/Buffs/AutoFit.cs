@@ -28,7 +28,8 @@ namespace PlayerEffects.Buffs {
                 ?.GetComponent<PickableItem>();
             if (pickableItem == null) throw new Exception("Need PickableItem");
 
-            if (generator.Antiques.Contains(pickableItem.itemName)) {
+            if (generator.Antiques.Any(antique =>
+                    generator.Antiques.Contains(new AntiqueWithAura(pickableItem.itemName, antique.AuraName)))) {
                 _initialized = true;
                 return;
             }
@@ -36,7 +37,7 @@ namespace PlayerEffects.Buffs {
             var antiques = generator.Antiques.ToArray();
             foreach (var antique in antiques) {
                 if (observer.Antiques.Contains(antique)) continue;
-                pickableItem.itemName = antique;
+                pickableItem.itemName = antique.ItemName;
             }
 
             Debug.Log("AutoFit " + pickableItem.itemName);

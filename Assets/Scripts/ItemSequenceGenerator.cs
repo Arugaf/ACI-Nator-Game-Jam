@@ -5,35 +5,43 @@ using Random = UnityEngine.Random;
 
 public class ItemSequenceGenerator : MonoBehaviour {
     public int antiquesSlotsCount = 2;
+    public int aurasSlotsCount = 2;
 
     [SerializeField] private PickableItem[] antiques;
+    [SerializeField] private Aura[] auras;
 
-    public HashSet<string> Antiques { get; } = new();
+    public HashSet<AntiqueWithAura> Antiques { get; } = new();
 
     private void Awake() {
         if (antiques.Length < antiquesSlotsCount) {
             throw new Exception("Not enough antiques");
+        }
+
+        if (auras.Length < aurasSlotsCount) {
+            throw new Exception("Not enough auras");
         }
     }
 
     public void GenerateSequence() {
         Antiques.Clear();
 
-        var ids = new List<int>();
+        var idsAntiques = new List<int>();
+        var idsAuras = new List<int>();
 
         for (var i = 0; i < antiquesSlotsCount; i++) {
-            var id = Random.Range(0, antiques.Length);
-            while (ids.Contains(id)) {
-                id = Random.Range(0, antiques.Length);
+            var idAntique = Random.Range(0, antiques.Length);
+            while (idsAntiques.Contains(idAntique)) {
+                idAntique = Random.Range(0, antiques.Length);
             }
 
-            ids.Add(id);
+            idsAntiques.Add(idAntique);
+            idsAuras.Add(Random.Range(0, auras.Length));
         }
 
         Debug.Log("New Round: ");
-        foreach (var currentId in ids) {
-            Antiques.Add(antiques[currentId].itemName);
-            Debug.Log("Item: " + antiques[currentId].itemName);
+        for (var i = 0; i < idsAntiques.Count; i++) {
+            Antiques.Add(new AntiqueWithAura(antiques[idsAntiques[i]].itemName, auras[idsAuras[i]].auraName));
+            Debug.Log("Item: " + antiques[idsAntiques[i]].itemName + " aura:" + auras[idsAuras[i]].auraName);
         }
     }
 }

@@ -1,28 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Interactor))]
-public class PickableItemInteractor : MonoBehaviour {
-    public bool currentlyCarryingItem;
+public class AuraInteractor : MonoBehaviour {
+    public bool currentlyWithAura;
 
-    [SerializeField] private Transform holdPoint;
+    [SerializeField] private PickableItemInteractor pickableItemInteractor;
     [SerializeField] private InputActionReference interactAction;
 
     private Interactor _interactor;
 
     private Camera _mainCamera;
 
-    private PickableItem _currentItem;
+    private Aura _currentAura;
 
-    public PickableItem TakeCurrentItem() {
-        var item = _currentItem;
-        _currentItem = null;
-        currentlyCarryingItem = false;
-        return item;
-    }
-
-    public PickableItem PeekItem() {
-        return _currentItem;
+    public Aura TakeCurrentAura() {
+        var aura = _currentAura;
+        _currentAura = null;
+        currentlyWithAura = false;
+        return aura;
     }
 
     private void Awake() {
@@ -43,15 +40,15 @@ public class PickableItemInteractor : MonoBehaviour {
     private void OnInteract(InputAction.CallbackContext context) {
         Vector2 mouseWorldPosition = _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         var collider = Physics2D.OverlapPoint(mouseWorldPosition);
-        var hoveredItem = collider != null ? collider.GetComponent<PickableItem>() : null;
+        var hoveredAura = collider != null ? collider.GetComponent<Aura>() : null;
 
-        if (hoveredItem == null) return;
+        if (hoveredAura == null) return;
 
-        if (!_interactor.CanInteract(hoveredItem.transform)) return;
-        
-        if (currentlyCarryingItem) return;
+        if (!_interactor.CanInteract(hoveredAura.transform)) return;
 
-        _currentItem = hoveredItem.Pickup(transform, holdPoint);
-        currentlyCarryingItem = true;
+        if (currentlyWithAura || !pickableItemInteractor.currentlyCarryingItem) return;
+
+        _currentAura = hoveredAura.Pickup(transform);
+        currentlyWithAura = true;
     }
 }

@@ -1,7 +1,5 @@
-using System;
 using PlayerEffects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class PickableItem : MonoBehaviour {
     public string itemName;

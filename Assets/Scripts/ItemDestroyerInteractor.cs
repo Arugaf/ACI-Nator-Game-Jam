@@ -3,17 +3,20 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Interactor))]
 [RequireComponent(typeof(PickableItemInteractor))]
+[RequireComponent(typeof(AuraInteractor))]
 public class ItemDestroyerInteractor : MonoBehaviour {
     [SerializeField] private InputActionReference interactAction;
 
     private Interactor _interactor;
     private PickableItemInteractor _pickableItemInteractor;
+    private AuraInteractor _auraInteractor;
 
     private Camera _mainCamera;
 
     private void Awake() {
         if (_interactor == null) _interactor = GetComponent<Interactor>();
         if (_pickableItemInteractor == null) _pickableItemInteractor = GetComponent<PickableItemInteractor>();
+        if (_auraInteractor == null) _auraInteractor = GetComponent<AuraInteractor>();
         if (_mainCamera == null) _mainCamera = Camera.main;
     }
 
@@ -36,7 +39,7 @@ public class ItemDestroyerInteractor : MonoBehaviour {
 
         if (!_interactor.CanInteract(destroyer.transform)) return;
 
-        destroyer.DestroyItem(_pickableItemInteractor.TakeCurrentItem());
+        destroyer.DestroyItem(_pickableItemInteractor.TakeCurrentItem(), _auraInteractor.TakeCurrentAura());
         _pickableItemInteractor.currentlyCarryingItem = false;
     }
 }

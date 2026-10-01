@@ -8,12 +8,14 @@ public class CounterInteractor : MonoBehaviour {
 
     private Interactor _interactor;
     private PickableItemInteractor _pickableItemInteractor;
+    private AuraInteractor _auraInteractor;
 
     private Camera _mainCamera;
 
     private void Awake() {
         if (_interactor == null) _interactor = GetComponent<Interactor>();
         if (_pickableItemInteractor == null) _pickableItemInteractor = GetComponent<PickableItemInteractor>();
+        if (_auraInteractor == null) _auraInteractor = GetComponent<AuraInteractor>();
         if (_mainCamera == null) _mainCamera = Camera.main;
     }
 
@@ -36,6 +38,6 @@ public class CounterInteractor : MonoBehaviour {
 
         if (!_interactor.CanInteract(counter.transform)) return;
 
-        counter.AcceptItem(_pickableItemInteractor.TakeCurrentItem());
+        counter.AcceptItem(_pickableItemInteractor.TakeCurrentItem(), _auraInteractor.TakeCurrentAura());
     }
 }
