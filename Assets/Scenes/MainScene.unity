@@ -1497,6 +1497,22 @@ PrefabInstance:
       propertyPath: auraName
       value: Semar
       objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.b
+      value: 0.5686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.g
+      value: 0.69803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.r
+      value: 0.20392159
+      objectReference: {fileID: 0}
     - target: {fileID: 9128069912710901210, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: m_Name
       value: Semar
@@ -2201,11 +2217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348016620768287475, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: highlightColor.b
-      value: 0.6792453
+      value: 0.6784314
       objectReference: {fileID: 0}
     - target: {fileID: 5348016620768287475, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: highlightColor.g
-      value: 0.45250848
+      value: 0.4509804
       objectReference: {fileID: 0}
     - target: {fileID: 5348016620768287475, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: highlightColor.r
@@ -2222,6 +2238,22 @@ PrefabInstance:
     - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: auraName
       value: Tintia
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.b
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.g
+      value: 0.73333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.r
+      value: 0.9921569
       objectReference: {fileID: 0}
     - target: {fileID: 9128069912710901210, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: m_Name
@@ -3093,6 +3125,114 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.32
+--- !u!1 &504111625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504111626}
+  - component: {fileID: 504111627}
+  m_Layer: 0
+  m_Name: Current Aura
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &504111626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504111625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1059300486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504111627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504111625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
+  m_ComponentVersion: 4
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_Light2DProvider:
+    rid: -2
+  m_SelectionSources:
+    rid: 2167779589578031184
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 15
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 00000000i
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1.5
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2167779589578031184
+      type: {class: Light2DProviderSources, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_SelectedHashCode: 3
+        m_SelectedSource:
+          rid: -2
+        m_Provider2DCache:
+          rid: 2167779589578031185
+    - rid: 2167779589578031185
+      type: {class: 'Provider2DCache`1[[UnityEngine.Rendering.Universal.Light2DProvider, Unity.RenderPipelines.Universal.2D.Runtime]]', ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
+      data:
+        m_Cache: []
 --- !u!1 &510269821
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,7 +4387,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000i
+  m_ApplyToSortingLayers: 000000004b8d57fei
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -6701,6 +6841,7 @@ GameObject:
   - component: {fileID: 1059300496}
   - component: {fileID: 1059300497}
   - component: {fileID: 1059300498}
+  - component: {fileID: 1059300499}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6753,8 +6894,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -27816629
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3534623036859425544, guid: 5403ecaccda22a7429bd6ba65290fe7d, type: 3}
@@ -6782,6 +6923,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1573018552}
+  - {fileID: 504111626}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1059300487
@@ -6968,6 +7110,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f6c94504c3113428a5406884af3e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectRotator
+--- !u!114 &1059300499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059300484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc0a36be24f417041bc49a3c0d3d5c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AuraLight
+  lightSource: {fileID: 504111627}
 --- !u!1 &1084550804
 GameObject:
   m_ObjectHideFlags: 0
@@ -8047,11 +8202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348016620768287475, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: highlightColor.b
-      value: 0.6792453
+      value: 0.6784314
       objectReference: {fileID: 0}
     - target: {fileID: 5348016620768287475, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: highlightColor.g
-      value: 0.45250848
+      value: 0.4509804
       objectReference: {fileID: 0}
     - target: {fileID: 5348016620768287475, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: highlightColor.r
@@ -8068,6 +8223,22 @@ PrefabInstance:
     - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: auraName
       value: Shantia
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.b
+      value: 0.8941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.g
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.r
+      value: 0.7294118
       objectReference: {fileID: 0}
     - target: {fileID: 9128069912710901210, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: m_Name
@@ -10492,6 +10663,22 @@ PrefabInstance:
     - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: auraName
       value: Barong
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.b
+      value: 0.29803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.g
+      value: 0.28627452
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146392996932769366, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: auraColor.r
+      value: 0.8000001
       objectReference: {fileID: 0}
     - target: {fileID: 9128069912710901210, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: m_Name

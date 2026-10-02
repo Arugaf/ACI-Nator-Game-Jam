@@ -14,17 +14,22 @@ public class AuraInteractor : MonoBehaviour {
     private Camera _mainCamera;
 
     private Aura _currentAura;
+    private AuraLight _auraLight;
 
     public Aura TakeCurrentAura() {
         var aura = _currentAura;
         _currentAura = null;
         currentlyWithAura = false;
+
+        _auraLight?.ResetLight();
+
         return aura;
     }
 
     private void Awake() {
         if (_interactor == null) _interactor = GetComponent<Interactor>();
         if (_mainCamera == null) _mainCamera = Camera.main;
+        if (_auraLight == null) _auraLight = GetComponent<AuraLight>();
     }
 
     private void OnEnable() {
@@ -50,5 +55,6 @@ public class AuraInteractor : MonoBehaviour {
 
         _currentAura = hoveredAura.Pickup(transform);
         currentlyWithAura = true;
+        _auraLight?.SetAura(_currentAura);
     }
 }
