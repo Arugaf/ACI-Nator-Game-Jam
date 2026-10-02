@@ -6,9 +6,14 @@ using UnityEngine;
 public class ItemSequenceObserver : MonoBehaviour {
     [SerializeField] private ItemSequenceGenerator generator;
 
+    [SerializeField] private int maxAttempts = 3;
+    [SerializeField] private Knockback knockbackSource;
+
     public HashSet<AntiqueWithAura> Antiques { get; } = new();
 
     private GameTimer _gameTimer;
+
+    private int _currentNumOfAttempts;
 
     private void Awake() {
         if (_gameTimer == null) _gameTimer = GetComponent<GameTimer>();
@@ -42,6 +47,13 @@ public class ItemSequenceObserver : MonoBehaviour {
             }
 
             Debug.Log("Inappropriate item");
+
+            ++_currentNumOfAttempts;
+            if (_currentNumOfAttempts >= maxAttempts && knockbackSource != null) {
+                knockbackSource.Push(interactor.gameObject);
+                _currentNumOfAttempts = 0;
+            }
+
             Destroy(item.gameObject);
             Destroy(aura.gameObject);
             return;
@@ -69,6 +81,8 @@ public class ItemSequenceObserver : MonoBehaviour {
     }
 
     private void StartNewRound() {
+        _currentNumOfAttempts = 0;
+
         Debug.Log("Round Complete!");
         generator.GenerateSequence();
         Antiques.Clear();

@@ -1907,6 +1907,7 @@ GameObject:
   - component: {fileID: 767810489}
   - component: {fileID: 767810488}
   - component: {fileID: 767810493}
+  - component: {fileID: 767810494}
   m_Layer: 0
   m_Name: Counter
   m_TagString: Untagged
@@ -2076,6 +2077,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NonCarryingItemPredicate
   interactor: {fileID: 1059300490}
+--- !u!114 &767810494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767810487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409446a0758eb71459404e4060ed6d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Knockback
+  force: 25
 --- !u!1 &840560809
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,7 +3383,6 @@ GameObject:
   - component: {fileID: 1295033378}
   - component: {fileID: 1295033380}
   - component: {fileID: 1295033379}
-  - component: {fileID: 1295033381}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Aura
@@ -3528,25 +3541,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NonCarryingItemPredicate
   interactor: {fileID: 1059300490}
---- !u!114 &1295033381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295033374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ae1e36d60835545bc8cacb284c9529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerEffects.Debuffs.RandomLightFlicker
-  _duration: 5
-  sceneLight: {fileID: 619394801}
-  canvases:
-  - {fileID: 127903429}
-  - {fileID: 254774089}
-  minInterval: 0.495
-  maxInterval: 0.5
 --- !u!1 &1306047029
 GameObject:
   m_ObjectHideFlags: 0
@@ -4192,6 +4186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSequenceObserver
   generator: {fileID: 1773304569}
+  maxAttempts: 3
+  knockbackSource: {fileID: 767810494}
 --- !u!114 &1773304569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4243,7 +4239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
   timeScale: 1
-  duration: 15
+  duration: 30
 --- !u!1 &1815797834
 GameObject:
   m_ObjectHideFlags: 0

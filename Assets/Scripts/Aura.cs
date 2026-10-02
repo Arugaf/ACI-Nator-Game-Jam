@@ -16,13 +16,13 @@ public class Aura : MonoBehaviour {
         newAura.transform.localRotation = Quaternion.identity;
         newAura.GetComponent<Collider2D>().enabled = false;
 
-        var effectController = interactor.GetComponent<EffectController>();
-        if (effectController == null) return newAura.GetComponent<Aura>();
-
-        foreach (var effect in Effects) {
-            Debug.Log("New effect " + effect.GetType().Name);
-            effectController.AddEffect(effect, gameObject);
-        }
+        // var effectController = interactor.GetComponent<EffectController>();
+        // if (effectController == null) return newAura.GetComponent<Aura>();
+        //
+        // foreach (var effect in Effects) {
+        //     Debug.Log("New effect " + effect.GetType().Name);
+        //     effectController.AddEffect(effect, gameObject);
+        // }
 
         return newAura.GetComponent<Aura>();
     }
