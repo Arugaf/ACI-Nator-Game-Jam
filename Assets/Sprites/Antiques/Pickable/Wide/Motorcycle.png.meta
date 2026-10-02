@@ -3,8 +3,8 @@ guid: 15dcf8492e56ca4499a60d308cf081d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2315571681730347858
-    second: "\u043C\u043E\u0446\u044B\u043A_0"
+      213: -1445452147897729650
+    second: Motorcycle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043C\u043E\u0446\u044B\u043A_0"
+      name: Motorcycle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
-        height: 51
+        x: 18
+        y: 3
+        width: 124
+        height: 79
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 253cd751d20922020800000000000000
-      internalID: 2315571681730347858
+      spriteID: e8dfab80ee8b0fbe0800000000000000
+      internalID: -1445452147897729650
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u043C\u043E\u0446\u044B\u043A_0": 2315571681730347858
+      Motorcycle_0: -1445452147897729650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

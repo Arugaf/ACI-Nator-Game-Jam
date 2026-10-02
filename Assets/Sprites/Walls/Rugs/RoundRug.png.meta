@@ -3,8 +3,8 @@ guid: eca63e0d2a8984f458b781e3d46bb48a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6129096567268168843
-    second: "\u043A\u043E\u0432\u0435\u0440 \u0434\u043B\u044F \u043A\u0440\u0443\u0433\u043B\u043E\u0433\u043E_0"
+      213: -4243900394927306517
+    second: RoundRug_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043A\u043E\u0432\u0435\u0440 \u0434\u043B\u044F \u043A\u0440\u0443\u0433\u043B\u043E\u0433\u043E_0"
+      name: RoundRug_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 109
-        height: 197
+        x: 1
+        y: 14
+        width: 137
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b84d516cadcee0550800000000000000
-      internalID: 6129096567268168843
+      spriteID: be8c7327313aa15c0800000000000000
+      internalID: -4243900394927306517
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u043A\u043E\u0432\u0435\u0440 \u0434\u043B\u044F \u043A\u0440\u0443\u0433\u043B\u043E\u0433\u043E_0": 6129096567268168843
+      RoundRug_0: -4243900394927306517
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

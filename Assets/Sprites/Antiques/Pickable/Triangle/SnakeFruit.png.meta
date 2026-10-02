@@ -3,8 +3,8 @@ guid: a96cac2c4bc41944db3077ac9b761836
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6774300049270005494
-    second: "\u0437\u043C\u0435\u0438\u043D\u044B\u0439 \u0444\u0440\u0443\u043A\u0442_0"
+      213: 2788885876366656719
+    second: SnakeFruit_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0437\u043C\u0435\u0438\u043D\u044B\u0439 \u0444\u0440\u0443\u043A\u0442_0"
+      name: SnakeFruit_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 123
+        x: 5
+        y: 21
+        width: 91
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6fe56a6c006230e50800000000000000
-      internalID: 6774300049270005494
+      spriteID: fc440fbadec14b620800000000000000
+      internalID: 2788885876366656719
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u0437\u043C\u0435\u0438\u043D\u044B\u0439 \u0444\u0440\u0443\u043A\u0442_0": 6774300049270005494
+      SnakeFruit_0: 2788885876366656719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

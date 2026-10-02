@@ -3,8 +3,8 @@ guid: c3b50283c2d1e024f93cfaa78e5b53e0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6507044319837548348
-    second: "\u0441\u0442\u0430\u0440\u0438\u043A_0"
+      213: 7599611432461533966
+    second: OldMan_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0441\u0442\u0430\u0440\u0438\u043A_0"
+      name: OldMan_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 700
-        height: 735
+        x: 13
+        y: 12
+        width: 726
+        height: 763
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3fe3a5455aad4a50800000000000000
-      internalID: 6507044319837548348
+      spriteID: e030ed6555e377960800000000000000
+      internalID: 7599611432461533966
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u0441\u0442\u0430\u0440\u0438\u043A_0": 6507044319837548348
+      OldMan_0: 7599611432461533966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3,8 +3,8 @@ guid: bea4465300e35e942a2fba8415a05586
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3785538000409074292
-    second: "\u0432\u0438\u0441\u043C\u0430 46_0"
+      213: -2438304786586823583
+    second: Wisma46_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0432\u0438\u0441\u043C\u0430 46_0"
+      name: Wisma46_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 60
-        height: 127
+        x: 3
+        y: 22
+        width: 88
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c85efd9ce31177bc0800000000000000
-      internalID: -3785538000409074292
+      spriteID: 1649b5d17b6692ed0800000000000000
+      internalID: -2438304786586823583
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u0432\u0438\u0441\u043C\u0430 46_0": -3785538000409074292
+      Wisma46_0: -2438304786586823583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

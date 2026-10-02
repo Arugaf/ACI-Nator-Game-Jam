@@ -3,8 +3,8 @@ guid: ef7f46532257b804c9261aa448eda535
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4197796273605167547
-    second: "\u043A\u043E\u0432\u0435\u0440 \u0434\u043B\u044F \u0442\u0440\u0435\u0443\u0433\u043E\u043B\u044C\u043D\u043E\u0433\u043E_0"
+      213: -3545381572609556272
+    second: TriangleRug_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043A\u043E\u0432\u0435\u0440 \u0434\u043B\u044F \u0442\u0440\u0435\u0443\u0433\u043E\u043B\u044C\u043D\u043E\u0433\u043E_0"
+      name: TriangleRug_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 102
-        height: 216
+        y: 11
+        width: 125
+        height: 244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5463e40b78e6eb5c0800000000000000
-      internalID: -4197796273605167547
+      spriteID: 0d044637e364ccec0800000000000000
+      internalID: -3545381572609556272
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u043A\u043E\u0432\u0435\u0440 \u0434\u043B\u044F \u0442\u0440\u0435\u0443\u0433\u043E\u043B\u044C\u043D\u043E\u0433\u043E_0": -4197796273605167547
+      TriangleRug_0: -3545381572609556272
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

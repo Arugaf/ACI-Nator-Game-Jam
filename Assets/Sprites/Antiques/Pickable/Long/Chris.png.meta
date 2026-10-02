@@ -3,8 +3,8 @@ guid: 04334f6e1e6704740bd146208e1a83c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3812028348983396003
-    second: "\u043A\u0440\u0438\u0441\u041D\u0435\u0425\u044D\u043C\u0441\u0432\u043E\u0440\u0442_0"
+      213: 359380259189920356
+    second: Chris_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043A\u0440\u0438\u0441\u041D\u0435\u0425\u044D\u043C\u0441\u0432\u043E\u0440\u0442_0"
+      name: Chris_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 29
-        height: 128
+        x: 2
+        y: 12
+        width: 56
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d593021e964f81bc0800000000000000
-      internalID: -3812028348983396003
+      spriteID: 4629d401176ccf400800000000000000
+      internalID: 359380259189920356
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u043A\u0440\u0438\u0441\u041D\u0435\u0425\u044D\u043C\u0441\u0432\u043E\u0440\u0442_0": -3812028348983396003
+      Chris_0: 359380259189920356
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

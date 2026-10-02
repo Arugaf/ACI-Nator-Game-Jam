@@ -3,8 +3,8 @@ guid: 5b6b96cfbd0f6274ca7478669265e265
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7059270912111202095
-    second: "\u0448\u0430\u043D\u0442\u0438\u0410_0"
+      213: 5001640759671548591
+    second: Shantia_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0448\u0430\u043D\u0442\u0438\u0410_0"
+      name: Shantia_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 63
-        height: 64
+        x: 4
+        y: 5
+        width: 91
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d03d5ec18e680e90800000000000000
-      internalID: -7059270912111202095
+      spriteID: faa665665c5696540800000000000000
+      internalID: 5001640759671548591
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u0448\u0430\u043D\u0442\u0438\u0410_0": -7059270912111202095
+      Shantia_0: 5001640759671548591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

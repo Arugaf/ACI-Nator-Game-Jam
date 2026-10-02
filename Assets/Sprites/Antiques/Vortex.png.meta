@@ -3,8 +3,8 @@ guid: 651d7fc5f7b4fd349ade30eb7227b819
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 29823925280465216
-    second: "\u0434\u044B\u0440\u0430_0"
+      213: -7045733361631140637
+    second: Vortex_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0434\u044B\u0440\u0430_0"
+      name: Vortex_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 63
-        height: 64
+        x: 4
+        y: 5
+        width: 91
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0416628b3b4f96000800000000000000
-      internalID: 29823925280465216
+      spriteID: 3e46bd566d6883e90800000000000000
+      internalID: -7045733361631140637
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u0434\u044B\u0440\u0430_0": 29823925280465216
+      Vortex_0: -7045733361631140637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

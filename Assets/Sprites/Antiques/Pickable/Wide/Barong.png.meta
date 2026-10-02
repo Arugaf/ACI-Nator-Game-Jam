@@ -3,8 +3,8 @@ guid: 15f0bf72a199615479f2ff0b7acebdae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4316248187310791736
-    second: "\u0431\u0430\u0440\u043E\u043D\u0433_0"
+      213: 7456661182551237347
+    second: Barong_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u0431\u0430\u0440\u043E\u043D\u0433_0"
+      name: Barong_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 87
-        height: 47
+        x: 12
+        y: 1
+        width: 115
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83c551f9bd466eb30800000000000000
-      internalID: 4316248187310791736
+      spriteID: 3e22964a6d16b7760800000000000000
+      internalID: 7456661182551237347
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "\u0431\u0430\u0440\u043E\u043D\u0433_0": 4316248187310791736
+      Barong_0: 7456661182551237347
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
