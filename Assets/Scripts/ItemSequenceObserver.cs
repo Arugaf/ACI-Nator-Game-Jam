@@ -1,13 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(GameTimer))]
 public class ItemSequenceObserver : MonoBehaviour {
     [SerializeField] private ItemSequenceGenerator generator;
 
     public HashSet<AntiqueWithAura> Antiques { get; } = new();
 
-    public void Start() {
+    private GameTimer _gameTimer;
+
+    private void Awake() {
+        if (_gameTimer == null) _gameTimer = GetComponent<GameTimer>();
+        _gameTimer.TimerFinished += StartNewRound;
+    }
+
+    private void OnDestroy() {
+        _gameTimer.TimerFinished -= StartNewRound;
+    }
+
+    private void Start() {
         generator.GenerateSequence();
+        _gameTimer.StartTimer();
     }
 
     public void InsertItem(PickableItem item, Aura aura) {
@@ -35,8 +48,14 @@ public class ItemSequenceObserver : MonoBehaviour {
     private void CheckForNewRound() {
         if (!IsSequenceComplete()) return;
 
+        StartNewRound();
+    }
+
+    private void StartNewRound() {
         Debug.Log("Round Complete!");
         generator.GenerateSequence();
         Antiques.Clear();
+
+        _gameTimer.StartTimer();
     }
 }
