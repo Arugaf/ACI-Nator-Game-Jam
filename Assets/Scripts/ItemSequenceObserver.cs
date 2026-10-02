@@ -1,10 +1,13 @@
 using System.Collections.Generic;
+using System.Linq;
 using PlayerEffects;
 using UnityEngine;
 
 [RequireComponent(typeof(GameTimer))]
 public class ItemSequenceObserver : MonoBehaviour {
     [SerializeField] private ItemSequenceGenerator generator;
+
+    [SerializeField] private ReactionSystem reactionSystem;
 
     [SerializeField] private int maxAttempts = 3;
     [SerializeField] private Knockback knockbackSource;
@@ -34,6 +37,8 @@ public class ItemSequenceObserver : MonoBehaviour {
         if (!item.CompareTag("Antique") || Antiques.Contains(new AntiqueWithAura(item.itemName, aura.auraName)) ||
             !generator.Antiques.Contains(new AntiqueWithAura(item.itemName, aura.auraName)) ||
             !aura.CompareTag("Aura")) {
+            reactionSystem.React(item.category, generator.AntiquesCategories.ToList());
+
             if (!generator.ContainsAura(aura)) {
                 var effectController = interactor.GetComponent<EffectController>();
 
@@ -60,6 +65,7 @@ public class ItemSequenceObserver : MonoBehaviour {
         }
 
         Antiques.Add(new AntiqueWithAura(item.itemName, aura.auraName));
+        reactionSystem.ReactPositive();
         Debug.Log("Item: " + item.itemName + " added");
         item.gameObject.SetActive(false);
         aura.gameObject.SetActive(false);

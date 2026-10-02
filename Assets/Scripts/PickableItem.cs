@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PickableItem : MonoBehaviour {
     public string itemName;
+    public ReactionSystem.Category category;
 
     private StatusEffect[] _effects;
 

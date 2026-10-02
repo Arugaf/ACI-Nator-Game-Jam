@@ -12,6 +12,7 @@ public class ItemSequenceGenerator : MonoBehaviour {
     [SerializeField] private Aura[] auras;
 
     public HashSet<AntiqueWithAura> Antiques { get; } = new();
+    public HashSet<ReactionSystem.Category> AntiquesCategories { get; } = new();
 
     private void Awake() {
         if (antiques.Length < antiquesSlotsCount) {
@@ -24,15 +25,32 @@ public class ItemSequenceGenerator : MonoBehaviour {
     }
 
     public bool ContainsAura(Aura aura) {
-        return auras.Contains(aura);
+        return Antiques.Any(antique => aura.auraName == antique.AuraName);
     }
 
     public Aura GetRandomAura() {
-        return auras.ElementAt(Random.Range(0, auras.Length));
+        var aura = Antiques.ElementAt(Random.Range(0, Antiques.Count));
+        return auras.FirstOrDefault(a => a.auraName == aura.AuraName);
+    }
+
+    public List<ReactionSystem.Category> GetAllCategories() {
+        var categories = new List<ReactionSystem.Category>();
+
+        foreach (var antique in Antiques) {
+            foreach (var a in antiques) {
+                if (antique.ItemName != a.itemName) continue;
+
+                categories.Add(a.category);
+                break;
+            }
+        }
+
+        return categories;
     }
 
     public void GenerateSequence() {
         Antiques.Clear();
+        AntiquesCategories.Clear();
 
         var idsAntiques = new List<int>();
         var idsAuras = new List<int>();
@@ -50,6 +68,7 @@ public class ItemSequenceGenerator : MonoBehaviour {
         Debug.Log("New Round: ");
         for (var i = 0; i < idsAntiques.Count; i++) {
             Antiques.Add(new AntiqueWithAura(antiques[idsAntiques[i]].itemName, auras[idsAuras[i]].auraName));
+            AntiquesCategories.Add(antiques[idsAntiques[i]].category);
             Debug.Log("Item: " + antiques[idsAntiques[i]].itemName + " aura: " + auras[idsAuras[i]].auraName);
         }
     }
