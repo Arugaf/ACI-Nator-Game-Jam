@@ -1381,6 +1381,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1279672551}
     m_Modifications:
+    - target: {fileID: -1111785293146069369, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: interactor
+      value: 
+      objectReference: {fileID: 1059300497}
     - target: {fileID: 3219401769684060712, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: m_Size.x
       value: 0.92
@@ -1557,7 +1561,7 @@ MonoBehaviour:
   sceneLight: {fileID: 619394801}
   canvases:
   - {fileID: 254774089}
-  - {fileID: 0}
+  - {fileID: 1857419723}
   minInterval: 0.3
   maxInterval: 0.5
 --- !u!1 &247130440
@@ -2124,6 +2128,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1279672551}
     m_Modifications:
+    - target: {fileID: -1111785293146069369, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: interactor
+      value: 
+      objectReference: {fileID: 1059300497}
     - target: {fileID: 3219401769684060712, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: m_Size.x
       value: 0.92
@@ -8260,6 +8268,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1279672551}
     m_Modifications:
+    - target: {fileID: -1111785293146069369, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: interactor
+      value: 
+      objectReference: {fileID: 1059300497}
     - target: {fileID: 3219401769684060712, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: m_Size.x
       value: 0.91
@@ -9789,8 +9801,10 @@ MonoBehaviour:
     negativeReaction: {fileID: 2960087616141691976, guid: 9c7dce453b825834e8904a0e99714403, type: 3}
   positiveReaction: {fileID: -2287792284211670585, guid: 04fb89a1a511d5645b7ab4437dd6e6fe, type: 3}
   veryNegativeReaction: {fileID: 1046228787860372883, guid: 42aa62271c6d48849b762ccab894ff88, type: 3}
+  itemIsCorrectReaction: {fileID: 0}
   reactionRenderer: {fileID: 1735854645}
   reactionDuration: 3
+  activateCorrectItemReaction: 1
 --- !u!1 &1857419719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10700,6 +10714,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1279672551}
     m_Modifications:
+    - target: {fileID: -1111785293146069369, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
+      propertyPath: interactor
+      value: 
+      objectReference: {fileID: 1059300497}
     - target: {fileID: 3219401769684060712, guid: a2ae020fb30ac934c9bdd52fe73cc79b, type: 3}
       propertyPath: m_Size.x
       value: 0.92

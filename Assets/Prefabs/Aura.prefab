@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 6146392996932769366}
   - component: {fileID: 6135040835090895799}
   - component: {fileID: 5557118264715162765}
+  - component: {fileID: -1111785293146069369}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Aura
   m_TagString: Aura
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Aura
   auraName: Blue
+  auraColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &6135040835090895799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,3 +174,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &-1111785293146069369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9128069912710901210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4273dff28bc1c14da071b7f1a453b67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NotWithAuraPredicate
+  interactor: {fileID: 0}
