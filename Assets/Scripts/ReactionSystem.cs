@@ -20,9 +20,12 @@ public class ReactionSystem : MonoBehaviour {
 
     [SerializeField] private Sprite positiveReaction;
     [SerializeField] private Sprite veryNegativeReaction;
+    [SerializeField] private Sprite itemIsCorrectReaction;
 
     [SerializeField] private SpriteRenderer reactionRenderer;
     [SerializeField] private float reactionDuration = 3f;
+
+    [SerializeField] private bool activateCorrectItemReaction = true;
 
     private Sprite _defaultSprite;
     private Coroutine _reactionCoroutine;
@@ -32,6 +35,15 @@ public class ReactionSystem : MonoBehaviour {
     }
 
     public void React(Category requiredCategory, List<Category> itemCategories) {
+        if (activateCorrectItemReaction && itemCategories.Contains(requiredCategory)) {
+            if (_reactionCoroutine != null) {
+                StopCoroutine(_reactionCoroutine);
+            }
+
+            _reactionCoroutine = StartCoroutine(ShowReaction(itemIsCorrectReaction));
+            return;
+        }
+
         var reaction = veryNegativeReaction;
 
         if (itemCategories.Contains(requiredCategory)) {
