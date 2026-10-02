@@ -6298,6 +6298,7 @@ GameObject:
   - component: {fileID: 1059300495}
   - component: {fileID: 1059300496}
   - component: {fileID: 1059300497}
+  - component: {fileID: 1059300498}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6553,6 +6554,18 @@ MonoBehaviour:
   currentlyWithAura: 0
   pickableItemInteractor: {fileID: 1059300490}
   interactAction: {fileID: 1258622089917911945, guid: 63296a3cb03493944980c5b77b01050d, type: 3}
+--- !u!114 &1059300498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059300484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f6c94504c3113428a5406884af3e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectRotator
 --- !u!1 &1084550804
 GameObject:
   m_ObjectHideFlags: 0
