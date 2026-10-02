@@ -11,16 +11,17 @@ public class ItemSequenceObserver : MonoBehaviour {
 
     private void Awake() {
         if (_gameTimer == null) _gameTimer = GetComponent<GameTimer>();
-        _gameTimer.TimerFinished += StartNewRound;
+        _gameTimer.TimerFinished += OnTimerFinished;
     }
 
     private void OnDestroy() {
-        _gameTimer.TimerFinished -= StartNewRound;
+        _gameTimer.TimerFinished -= OnTimerFinished;
     }
 
     private void Start() {
         generator.GenerateSequence();
         _gameTimer.StartTimer();
+        ScoreSystem.Instance.ResetScore();
     }
 
     public void InsertItem(PickableItem item, Aura aura) {
@@ -48,6 +49,9 @@ public class ItemSequenceObserver : MonoBehaviour {
     private void CheckForNewRound() {
         if (!IsSequenceComplete()) return;
 
+        ScoreSystem.Instance.AddScore(_gameTimer.Duration - _gameTimer.TimeLeft);
+        Debug.Log("Current score: " + ScoreSystem.Instance.Score);
+
         StartNewRound();
     }
 
@@ -57,5 +61,12 @@ public class ItemSequenceObserver : MonoBehaviour {
         Antiques.Clear();
 
         _gameTimer.StartTimer();
+    }
+
+    private void OnTimerFinished() {
+        ScoreSystem.Instance.ReduceScore(0);
+        Debug.Log("Current score: " + ScoreSystem.Instance.Score);
+
+        StartNewRound();
     }
 }
