@@ -4,10 +4,10 @@ using UnityEngine;
 public class Aura : MonoBehaviour {
     public string auraName;
 
-    private StatusEffect[] _effects;
+    public StatusEffect[] Effects { get; private set; }
 
     private void Awake() {
-        _effects = GetComponents<StatusEffect>();
+        Effects = GetComponents<StatusEffect>();
     }
 
     public Aura Pickup(Transform interactor) {
@@ -19,7 +19,7 @@ public class Aura : MonoBehaviour {
         var effectController = interactor.GetComponent<EffectController>();
         if (effectController == null) return newAura.GetComponent<Aura>();
 
-        foreach (var effect in _effects) {
+        foreach (var effect in Effects) {
             Debug.Log("New effect " + effect.GetType().Name);
             effectController.AddEffect(effect, gameObject);
         }

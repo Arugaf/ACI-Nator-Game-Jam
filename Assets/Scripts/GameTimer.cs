@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 
 public class GameTimer : MonoBehaviour {
+    public float timeScale = 1f;
+    
     [SerializeField] private float duration = 60f;
 
     public event Action<float> TimerUpdated;
@@ -33,7 +35,7 @@ public class GameTimer : MonoBehaviour {
         while (TimeLeft > 0f) {
             yield return null;
 
-            TimeLeft -= Time.deltaTime;
+            TimeLeft -= Time.deltaTime * timeScale;
             if (TimeLeft < 0f) TimeLeft = 0f;
 
             TimerUpdated?.Invoke(TimeLeft);

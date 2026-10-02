@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,6 +21,14 @@ public class ItemSequenceGenerator : MonoBehaviour {
         if (auras.Length < aurasSlotsCount) {
             throw new Exception("Not enough auras");
         }
+    }
+
+    public bool ContainsAura(Aura aura) {
+        return auras.Contains(aura);
+    }
+
+    public Aura GetRandomAura() {
+        return auras.ElementAt(Random.Range(0, auras.Length));
     }
 
     public void GenerateSequence() {

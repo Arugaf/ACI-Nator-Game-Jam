@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using PlayerEffects;
 using UnityEngine;
 
 [RequireComponent(typeof(GameTimer))]
@@ -24,10 +25,22 @@ public class ItemSequenceObserver : MonoBehaviour {
         ScoreSystem.Instance.ResetScore();
     }
 
-    public void InsertItem(PickableItem item, Aura aura) {
+    public void InsertItem(Transform interactor, PickableItem item, Aura aura) {
         if (!item.CompareTag("Antique") || Antiques.Contains(new AntiqueWithAura(item.itemName, aura.auraName)) ||
             !generator.Antiques.Contains(new AntiqueWithAura(item.itemName, aura.auraName)) ||
             !aura.CompareTag("Aura")) {
+            if (!generator.ContainsAura(aura)) {
+                var effectController = interactor.GetComponent<EffectController>();
+
+                if (effectController != null) {
+                    var trueAura = generator.GetRandomAura();
+                    foreach (var effect in trueAura.Effects) {
+                        Debug.Log("New effect " + effect.GetType().Name);
+                        effectController.AddEffect(effect, gameObject);
+                    }
+                }
+            }
+
             Debug.Log("Inappropriate item");
             Destroy(item.gameObject);
             Destroy(aura.gameObject);
