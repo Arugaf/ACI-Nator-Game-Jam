@@ -11,7 +11,7 @@ namespace UI {
         }
 
         private void Start() {
-            _scoreText.SetText(ScoreSystem.Instance.Score.ToString());
+            _scoreText.SetText("Final score: " + ScoreSystem.Instance.Score);
         }
     }
 }
