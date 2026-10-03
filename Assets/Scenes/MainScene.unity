@@ -7541,7 +7541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e745253495a4b50469a27a1abf5b43a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactor
-  pickupDistance: 2
+  pickupDistance: 1
 --- !u!114 &1059300494
 MonoBehaviour:
   m_ObjectHideFlags: 0

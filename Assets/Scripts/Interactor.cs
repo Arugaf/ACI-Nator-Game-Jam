@@ -4,9 +4,10 @@ public class Interactor : MonoBehaviour {
     [SerializeField] private float pickupDistance = 1.5f;
 
     public bool CanInteract(Transform anotherObject) {
-        return Vector2.Distance(
-            transform.position,
-            anotherObject.position
-        ) <= pickupDistance;
+        // hack
+        var collider1 = GetComponent<Collider2D>();
+        var collider2 = anotherObject.GetComponent<Collider2D>();
+
+        return collider1.Distance(collider2).distance <= pickupDistance;
     }
 }
