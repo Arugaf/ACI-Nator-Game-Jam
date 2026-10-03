@@ -11,8 +11,13 @@ namespace PlayerEffects.Debuffs {
         [SerializeField] private float minInterval = 0.1f;
         [SerializeField] private float maxInterval = 0.5f;
 
+        private Camera _camera;
+        private Color _cameraOriginalColor;
+
         private void Awake() {
             _originalIntensity = sceneLight.intensity;
+            _camera = Camera.main;
+            _cameraOriginalColor = _camera.backgroundColor;
         }
 
         public override void Apply(EffectContext context) {
@@ -39,6 +44,10 @@ namespace PlayerEffects.Debuffs {
                     ? _originalIntensity
                     : 0f;
 
+                _camera.backgroundColor = lightEnabled
+                    ? _cameraOriginalColor
+                    : Color.black;
+
                 foreach (var canvas in canvases) {
                     canvas.enabled = lightEnabled;
                 }
@@ -54,6 +63,7 @@ namespace PlayerEffects.Debuffs {
             foreach (var canvas in canvases) {
                 canvas.enabled = true;
             }
+            _camera.backgroundColor = _cameraOriginalColor;
         }
     }
 }
