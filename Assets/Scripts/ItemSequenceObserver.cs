@@ -14,7 +14,7 @@ public class ItemSequenceObserver : MonoBehaviour {
     [SerializeField] private Knockback knockbackSource;
 
     public HashSet<AntiqueWithAura> Antiques { get; } = new();
-    
+
     public event Action OnNumOfAntiquesChanged;
 
     private GameTimer _gameTimer;
@@ -40,7 +40,14 @@ public class ItemSequenceObserver : MonoBehaviour {
         if (!item.CompareTag("Antique") || Antiques.Contains(new AntiqueWithAura(item.itemName, aura.auraName)) ||
             !generator.Antiques.Contains(new AntiqueWithAura(item.itemName, aura.auraName)) ||
             !aura.CompareTag("Aura")) {
-            reactionSystem.React(item.category, generator.AntiquesCategories.ToList());
+            // hack
+            var react = true;
+            if (generator.Antiques.Any(a => a.ItemName == item.itemName)) {
+                reactionSystem.ReactCorrectItem();
+                react = false;
+            }
+
+            if (react) reactionSystem.React(item.category, generator.AntiquesCategories.ToList());
 
             if (!generator.ContainsAura(aura)) {
                 var effectController = interactor.GetComponent<EffectController>();
@@ -72,7 +79,7 @@ public class ItemSequenceObserver : MonoBehaviour {
         Debug.Log("Item: " + item.itemName + " added");
         item.gameObject.SetActive(false);
         aura.gameObject.SetActive(false);
-        
+
         OnNumOfAntiquesChanged?.Invoke();
 
         CheckForNewRound();

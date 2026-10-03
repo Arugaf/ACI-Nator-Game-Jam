@@ -35,15 +35,6 @@ public class ReactionSystem : MonoBehaviour {
     }
 
     public void React(Category requiredCategory, List<Category> itemCategories) {
-        if (activateCorrectItemReaction && itemCategories.Contains(requiredCategory)) {
-            if (_reactionCoroutine != null) {
-                StopCoroutine(_reactionCoroutine);
-            }
-
-            _reactionCoroutine = StartCoroutine(ShowReaction(itemIsCorrectReaction));
-            return;
-        }
-
         var reaction = veryNegativeReaction;
 
         if (itemCategories.Contains(requiredCategory)) {
@@ -59,6 +50,15 @@ public class ReactionSystem : MonoBehaviour {
         }
 
         _reactionCoroutine = StartCoroutine(ShowReaction(reaction));
+    }
+
+    public void ReactCorrectItem() {
+        if (_reactionCoroutine != null) {
+            StopCoroutine(_reactionCoroutine);
+        }
+
+        _reactionCoroutine = StartCoroutine(ShowReaction(itemIsCorrectReaction));
+        return;
     }
 
     public void ReactPositive() {
