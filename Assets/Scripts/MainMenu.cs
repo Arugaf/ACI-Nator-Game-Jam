@@ -4,6 +4,7 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private GameObject mainMenuPage;
     [SerializeField] private GameObject howToPlayPage;
     [SerializeField] private GameObject controlsPage;
+    [SerializeField] private GameObject aboutPage;
 
     public void PlayGame() {
         GameStateManager.Instance.StartGame();
@@ -19,7 +20,10 @@ public class MainMenu : MonoBehaviour {
         mainMenuPage.SetActive(!controlsPage.activeSelf);
     }
 
-    public void ToggleAboutPage() { }
+    public void ToggleAboutPage() {
+        aboutPage.SetActive(!aboutPage.activeSelf);
+        mainMenuPage.SetActive(!aboutPage.activeSelf);
+    }
 
     public void QuitGame() {
         GameStateManager.Instance.QuitGame();
