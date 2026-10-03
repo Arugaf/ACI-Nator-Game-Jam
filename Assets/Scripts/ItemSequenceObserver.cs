@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using PlayerEffects;
@@ -13,6 +14,8 @@ public class ItemSequenceObserver : MonoBehaviour {
     [SerializeField] private Knockback knockbackSource;
 
     public HashSet<AntiqueWithAura> Antiques { get; } = new();
+    
+    public event Action OnNumOfAntiquesChanged;
 
     private GameTimer _gameTimer;
 
@@ -69,8 +72,14 @@ public class ItemSequenceObserver : MonoBehaviour {
         Debug.Log("Item: " + item.itemName + " added");
         item.gameObject.SetActive(false);
         aura.gameObject.SetActive(false);
+        
+        OnNumOfAntiquesChanged?.Invoke();
 
         CheckForNewRound();
+    }
+
+    public int GetNumOfAntiquesLeft() {
+        return generator.antiquesSlotsCount - Antiques.Count;
     }
 
     private bool IsSequenceComplete() {
